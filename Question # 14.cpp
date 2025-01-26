@@ -1,44 +1,47 @@
-#include <iostream>
+#include<iostream>
+#include<string>
 using namespace std;
 
-// Function to calculate the length of a string manually
-int calculateLength(const string& str) {
-    int length = 0;
-    for (char ch : str) {
-        length++;
+int main() {
+    string input1 = "Hello world", input2;
+    
+    // Display the first initialized string
+    cout << "First String is: " << input1 << endl;
+    
+    // Take the second string input from the user
+    cout << "Enter a string for input2: ";
+    cin >> input2;
+    
+    // Compare the two strings
+    if (input1 == input2) {
+        cout << "Both strings are similar." << endl;
+    } else {
+        cout << "Strings are not similar." << endl;
     }
-    return length;
-}
 
-// Function to reverse a string manually
-void reverseString(const string& str) {
-    int length = calculateLength(str); // Calculate length manually
-    for (int i = length - 1; i >= 0; i--) {
-        cout << str[i];
+    // Print the first string in reverse order (without using length())
+    cout << "Reversed First String: ";
+    int i = 0;
+    while (input1[i] != '\0') {
+        i++;  // Find the length manually by checking for the null character
+    }
+    // Now i points to the length of the string
+    for (int j = i - 1; j >= 0; j--) {
+        cout << input1[j];  // Print characters in reverse order
     }
     cout << endl;
-}
 
-int main() {
-    string str1 = "example"; // Initialized string
-    string str2;
-
-    cout << "Enter a string: ";
-    cin >> str2; // Input string from the user
-
-    // Compare the strings
-    if (str1 == str2) {
-        cout << "The strings are similar." << endl;
-    } else {
-        cout << "The strings are not similar." << endl;
+    // Print the second string in reverse order (without using length())
+    cout << "Reversed Second String: ";
+    int k = 0;
+    while (input2[k] != '\0') {
+        k++;  // Find the length manually by checking for the null character
     }
-
-    // Print strings in reverse
-    cout << "Reversed initialized string: ";
-    reverseString(str1);
-
-    cout << "Reversed input string: ";
-    reverseString(str2);
+    // Now k points to the length of the string
+    for (int l = k - 1; l >= 0; l--) {
+        cout << input2[l];  // Print characters in reverse order
+    }
+    cout << endl;
 
     return 0;
 }

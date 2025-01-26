@@ -1,52 +1,41 @@
-#include <iostream>
-#include <cmath> // For pow function
+//#include<iostream>
+//using namespace std;
+//
+//int main(){
+//	int num , sum = 0 ;
+//	cout<<" Enter Your Number : "<<endl;
+//	cin>>num;
+//	int temp = num;
+//	while(num!=0){
+//		int remin = num%10; //This is the modulus operator, and it gives the remainder when dividing by 10.
+//		sum += remin * remin * remin ;
+//		num = num/10;//This is the division operator, and it removes the last digit of the number.
+//	
+//	
+//}
+//if(sum ==num){
+//		cout<<" Astrom Number : "<<sum<<endl;
+//	}else{
+//		cout<<" Not Astrom Number"<<endl;
+//	}
+//return 0;
+//}
+#include<iostream>
 using namespace std;
-
-// Function to check if a number is an Armstrong number
-int isArmstrong(double number) {
-    // Separate the integer and fractional parts
-    int integerPart = static_cast<int>(number);
-    double fractionalPart = number - integerPart;
-
-    // Count digits in the integer part
-    int temp = integerPart, count = 0;
-    while (temp != 0) {
-        count++;
-        temp /= 10;
-    }
-
-    // Calculate the sum of the digits raised to the power of the digit count
-    int sum = 0;
-    temp = integerPart;
-    while (temp != 0) {
-        int digit = temp % 10;
-        sum += pow(digit, count);
-        temp /= 10;
-    }
-
-    // Return 1 if it's an Armstrong number, otherwise return 0
-    if (sum == integerPart && fractionalPart == 0) {
-        return 1; // Armstrong number
-    } else {
-        return 0; // Not an Armstrong number
-    }
-}
-
-int main() {
-    double num;
-    cout << "Enter a decimal number: ";
-    cin >> num;
-
-    if (num < 0) {
-        cout << "Negative numbers cannot be Armstrong numbers." << endl;
-        return 0;
-    }
-
-    if (isArmstrong(num)) {
-        cout << num << " is an Armstrong number." << endl;
-    } else {
-        cout << num << " is not an Armstrong number." << endl;
-    }
-
-    return 0;
+int main(){
+	int num , sum = 0;
+	cout<<" Enter Your Number "<<endl;
+	cin>>num;
+	int temp = num ;
+	while(num != 0){
+		int remain = num%10;
+		sum += remain * remain * remain ;
+		num = num/10;
+	}
+	if(sum == temp ){
+		cout<<sum <<":  is  Astrom number  "<<endl;
+	}else{
+		cout<<sum<< ": is not Astrom Number "<<endl;
+	}
+	return 0;
 }
